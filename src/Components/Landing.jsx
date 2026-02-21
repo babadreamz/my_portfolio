@@ -5,20 +5,17 @@ import { FaDownload, FaWhatsapp } from 'react-icons/fa'
 
 function Landing() {
   const [showInput, setShowInput] = useState(false);
+    const [profileImg, setProfileImg] = useState(import.meta.env.VITE_PROFILE_PIC);
 
-  let profileImg = import.meta.env.VITE_PROFILE_PIC
   const my_cv = import.meta.env.VITE_CV
 
-  const handleDownloadCV = () => {
-    const link = document.createElement('a')
-    link.href = my_cv
-    link.download = 'shima_hilary_kaior_CV.pdf'
-    link.click()
-
-    link.onerror = () => {
-      alert('CV file not found. Please add your file.')
-    }
-  }
+    const handleDownloadCV = () => {
+        if (!my_cv) {
+            alert('CV link not found. Check Vercel Environment Variables.');
+            return;
+        }
+        window.open(my_cv, '_blank');
+    };
 
   const handleHireMe = () => {
     const contactSection = document.getElementById('contact');
@@ -40,28 +37,33 @@ function Landing() {
 
   const preset = import.meta.env.VITE_PRESET
   const cloudName = import.meta.env.VITE_CLOUD_NAME
-  const URL = import.meta.env.VITE_IMAGE_UPLOAD_URL
+  const uploadURL = import.meta.env.VITE_IMAGE_UPLOAD_URL
 
   const handleUploadFile = async (event) => {
     event.preventDefault();
     const file = event.target.file.files[0];
+      if (!file) return;
 
     const formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', preset);
     formData.append('cloud_name', cloudName);
 
-    await fetch(URL, {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-       data.url && (profileImg = data.url)
-    })
-    .catch(err => alert(err.message));
-  };
+    try{
+        const response = await fetch(uploadURL, {
+            method: 'POST',
+            body: formData
+        });
+        const data = await response.json();
 
+        if (data.secure_url) {
+            setProfileImg(data.secure_url); // Update the UI immediately
+            setShowInput(false); // Hide the upload form
+        }
+    } catch (err) {
+        alert("Upload failed: " + err.message);
+    }
+  };
   return (
     <section id="home" className="landing">
       <div className="landing-container">

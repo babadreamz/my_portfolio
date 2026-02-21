@@ -56,8 +56,8 @@ function Projects() {
           ' visually engaging user experience. It combines modern UI design with smooth animations and scalable ' +
           'architecture to ensure performance and interactivity across devices.',
       image: `${Portfolio}`,
-      liveUrl: 'https://portfolio-git-main-emmanuel-adahs-projects.vercel.app/',
-      githubUrl: 'https://github.com/EmmanuelAdah/portfolio',
+      liveUrl: 'https://myportfolio-git-main-babadreamzs-projects.vercel.app/',
+      githubUrl: 'https://github.com/babadreamz/my_portfolio',
       technologies: ['React', 'JavaScript', 'CSS3', 'Framer Motion'],
       category: 'frontend',
       techIcons: [FaReact, FaJs, SiTailwindcss]
