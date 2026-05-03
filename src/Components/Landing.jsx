@@ -5,7 +5,7 @@ import { FaDownload, FaWhatsapp } from 'react-icons/fa'
 
 function Landing() {
   const [showInput, setShowInput] = useState(false);
-    const [profileImg, setProfileImg] = useState(import.meta.env.VITE_PROFILE_PICTURE);
+    const [profileImg, setProfileImg] = useState(import.meta.env.VITE_PROFILE_PIC);
 
   const my_cv = import.meta.env.VITE_CV
 
