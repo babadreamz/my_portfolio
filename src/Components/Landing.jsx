@@ -5,7 +5,7 @@ import { FaDownload, FaWhatsapp } from 'react-icons/fa'
 
 function Landing() {
   const [showInput, setShowInput] = useState(false);
-    const [profileImg, setProfileImg] = useState(import.meta.env.VITE_PROFILE_PIC);
+    const [profileImg, setProfileImg] = useState(import.meta.env.VITE_PROFILE_PICTURE);
 
   const my_cv = import.meta.env.VITE_CV
 
@@ -26,7 +26,7 @@ function Landing() {
 
   const handleWhatsApp = () => {
     const phoneNumber = import.meta.env.VITE_PHONE_NUMBER
-    const message = 'Hello! I saw your portfolio and would like to discuss a project.'
+    const message = 'Hello Shima! I saw your portfolio and would like to discuss further.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }

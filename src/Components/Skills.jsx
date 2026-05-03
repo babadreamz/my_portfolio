@@ -10,28 +10,32 @@ import {
   FaDatabase,
   FaJava,
   FaNodeJs,
-  FaDocker
+  FaDocker,
+    FaCloud,
+    FaCodeBranch
 } from 'react-icons/fa'
-import {SiDjango, SiMongodb, SiPostgresql, SiTailwindcss} from 'react-icons/si'
+import {SiMongodb, SiPostgresql, SiTailwindcss} from 'react-icons/si'
 import {FaGolang} from "react-icons/fa6";
 
 function Skills() {
 
   const skills = [
-    {name: 'Java', icon: FaJava, level: 89, color: '#F80000' },
+      { name: 'Java', icon: FaJava, level: 95, color: '#F80000' },
+      { name: 'PostgreSQL', icon: SiPostgresql, level: 90, color: '#14629b'},
+      { name: 'MySQL', icon: FaDatabase, level: 85, color: '#4479A1'},
       { name: 'Go', icon: FaGolang, level: 80, color: '#1572B6' },
-    { name: 'Node.js', icon: FaNodeJs, level: 80, color: '#3776AB' },
-    { name: 'React', icon: FaReact, level: 85, color: '#272769' },
-    { name: 'JavaScript', icon: FaJs, level: 88, color: '#F7DF1E' },
-    { name: 'HTML5', icon: FaHtml5, level: 70, color: '#E34F26' },
-    { name: 'CSS3', icon: FaCss3Alt, level: 80, color: '#1572B6' },
-    {name: 'Git', icon: FaGitAlt, level: 90, color: '#F05032' },
-    {name: 'MySQL', icon: FaDatabase, level: 80, color: '#4479A1'},
-    { name: 'Python', icon: FaPython, level: 75, color: '#45456d' },
-    { name: 'Docker', icon: FaDocker, level: 72, color: '#5b5bb4' },
-    { name: 'MongoDB', icon: SiMongodb, level: 75, color: '#47A248' },
-    {name: 'Tailwindcss', icon: SiTailwindcss, level: 70, color: '#1b0f62'},
-    {name: 'PostgreSQL', icon: SiPostgresql, level: 60, color: '#14629b'}
+      { name: 'Git', icon: FaGitAlt, level: 90, color: '#F05032' },
+      { name: 'Docker', icon: FaDocker, level: 80, color: '#5b5bb4' },
+      { name: 'Python', icon: FaPython, level: 70, color: '#45456d' },
+      { name: 'Cloud', icon: FaCloud, level: 80, color: '#1572B6' },
+      { name: 'CI/CD Pipeline', icon: FaCodeBranch, level: 80, color: '#1b0f62' },
+      { name: 'MongoDB', icon: SiMongodb, level: 75, color: '#47A248' },
+      { name: 'Node.js', icon: FaNodeJs, level: 75, color: '#3776AB' },
+      { name: 'React', icon: FaReact, level: 75, color: '#272769' },
+      { name: 'JavaScript', icon: FaJs, level: 80, color: '#F7DF1E' },
+      { name: 'HTML5', icon: FaHtml5, level: 60, color: '#E34F26' },
+      { name: 'Tailwindcss', icon: SiTailwindcss, level: 60, color: '#1b0f62'},
+      { name: 'CSS3', icon: FaCss3Alt, level: 60, color: '#1572B6' },
   ]
 
   return (
