@@ -7,9 +7,10 @@ import {
     FaJs,
     FaJava,
     FaDatabase,
-    FaNodeJs
+    FaNodeJs,
+    FaShieldAlt
 } from 'react-icons/fa'
-import {SiTailwindcss} from 'react-icons/si'
+import {SiTailwindcss, SiFirebase, SiMongodb} from 'react-icons/si'
 import Portfolio from '../assets/Images/portfolio.png'
 import BulkEmails from '../assets/Images/bulk_emails.png'
 import ExpenseTracker from '../assets/Images/expense_tracker.png'
@@ -17,7 +18,8 @@ import vote from '../assets/Images/vote.png'
 import sayepage from '../assets/Images/sayepage.png'
 import {BiLogoPostgresql} from "react-icons/bi";
 import {FaGolang} from "react-icons/fa6";
-
+import chatapp from '../assets/Images/chatapp.png'
+import safereport from '../assets/Images/safereport.png'
 
 function Projects() {
     const [activeFilter, setActiveFilter] = useState('all')
@@ -32,7 +34,7 @@ function Projects() {
                 'Includes secure authentication, PDF statement generation, and intuitive financial analytics.',
             image: `${sayepage}`,
             liveUrl: 'https://sayefinance.com',
-            githubUrl: 'https://github.com/babadreamz/FinancialToolFrontend', // Update with actual repository
+            githubUrl: 'https://github.com/babadreamz/FinancialToolFrontend',
             technologies: ['Spring Boot', 'React', 'PostgreSQL', 'Tailwind CSS', 'shadcn/ui'],
             category: 'fullstack',
             techIcons: [FaJava, FaReact, BiLogoPostgresql, SiTailwindcss]
@@ -53,6 +55,32 @@ function Projects() {
         },
         {
             id: 3,
+            title: 'SafeReport - Anonymous Reporting Platform',
+            description: 'A secure whistleblower platform that empowers individuals to report workplace wrongdoing ' +
+                'and misconduct without fear of retaliation. Built with Spring Boot and backed by Firebase, it features ' +
+                'end-to-end anonymous submissions, case tracking, an admin review dashboard, and real-time status ' +
+                'notifications — ensuring reporters stay protected while accountability is maintained.',
+            image: `${safereport}`,
+            githubUrl: 'https://github.com/babadreamz/SafeReport-Backend',
+            technologies: ['Spring Boot', 'Firebase', 'REST API'],
+            category: 'backend',
+            techIcons: [FaJava, SiFirebase, FaShieldAlt]
+        },
+        {
+            id: 4,
+            title: 'Simple Chat Service',
+            description: 'A lightweight real-time chat microservice built in Go and integrated into the SafeReport platform. ' +
+                'Designed for anonymous, context-aware communication between reporters and administrators, it features ' +
+                'persistent message storage with MongoDB, RESTful messaging APIs, and clean service boundaries ' +
+                'that make it independently deployable and easy to plug into any application.',
+            image: `${chatapp}`,
+            githubUrl: 'https://github.com/babadreamz/Simple-Chat-Service',
+            technologies: ['Golang', 'MongoDB', 'Microservices', 'REST API'],
+            category: 'backend',
+            techIcons: [FaGolang, SiMongodb]
+        },
+        {
+            id: 5,
             title: 'Portfolio Website',
             description: 'Built with React, TailwindCSS, and Framer Motion. This web application delivers a responsive,' +
                 ' visually engaging user experience. It combines modern UI design with smooth animations and scalable ' +
@@ -65,7 +93,7 @@ function Projects() {
             techIcons: [FaReact, FaJs, SiTailwindcss]
         },
         {
-            id: 4,
+            id: 6,
             title: 'Expense Tracker App',
             description: 'A robust expense tracking backend service built with Spring Boot and PostgreSQL. ' +
                 'Provides comprehensive RESTful APIs for recording, categorizing, and analyzing spending patterns. ' +
@@ -74,11 +102,11 @@ function Projects() {
             image: ExpenseTracker,
             githubUrl: 'https://github.com/babadreamz/PersonalExpenseTracker',
             technologies: ['Java(Spring Boot)', 'PostgreSQL'],
-            category: 'Backend',
+            category: 'backend',
             techIcons: [FaJava, FaDatabase]
         },
         {
-            id: 5,
+            id: 7,
             title: 'Email Sender',
             description: 'A high-performance email delivery microservice built with Go. Designed for reliable, scalable mass communication ' +
                 'with support for customizable email templates, batch processing, and detailed delivery tracking. ' +
@@ -146,19 +174,27 @@ function Projects() {
                             whileHover={{ y: -10 }}
                         >
                             <div className="project-image">
-                                <img src={project.image} alt={project.title} />
+                                {project.image ? (
+                                    <img src={project.image} alt={project.title} />
+                                ) : (
+                                    <div className="project-image-placeholder">
+                                        {project.techIcons[0] && React.createElement(project.techIcons[0], { className: 'placeholder-icon' })}
+                                    </div>
+                                )}
                                 <div className="project-overlay">
                                     <div className="project-links">
-                                        <motion.a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="project-link"
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.9 }}
-                                        >
-                                            <FaExternalLinkAlt />
-                                        </motion.a>
+                                        {project.liveUrl && (
+                                            <motion.a
+                                                href={project.liveUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="project-link"
+                                                whileHover={{ scale: 1.1 }}
+                                                whileTap={{ scale: 0.9 }}
+                                            >
+                                                <FaExternalLinkAlt />
+                                            </motion.a>
+                                        )}
                                         <motion.a href={project.githubUrl}
                                                   target="_blank"
                                                   rel="noopener noreferrer"
@@ -212,7 +248,6 @@ function Projects() {
                         >
                             <FaGithub /> View GitHub
                         </motion.a>
-
                     </div>
                 </motion.div>
             </div>

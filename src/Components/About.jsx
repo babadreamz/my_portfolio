@@ -25,11 +25,16 @@ function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3>A Systems-Oriented Software Engineer</h3>
-            <p>
-                I design and build scalable software systems with a strong emphasis on clean architecture, SOLID principles, and performance optimization. My work spans backend service design, database modeling, and responsive user interfaces.
-                I am particularly interested in systems that operate reliably under real-world constraints and evolve gracefully over time.
-            </p>
+              <h3>A Systems-Oriented Software Engineer</h3>
+              <p>
+                  I design and build scalable backend systems with a strong emphasis on
+                  clean architecture, performance, and long-term maintainability. My focus
+                  is on service design, data modeling, and distributed
+                  system behaviour under real-world constraints.
+                  <br/>
+                  I care less about what's trendy and more about systems that hold up
+                  when they actually matter.
+              </p>
             
             <div className="about-stats">
               <div className="stat">

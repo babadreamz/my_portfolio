@@ -76,13 +76,13 @@ function Landing() {
           >
             <h3>Hello, I'm</h3>
             <h1>Shima Hilary Kaior</h1>
-            <h2>Software Engineer & Full-Stack Developer</h2>
-            <p>
-              Leveraging expertise in modern web technologies, I build efficient,
-              scalable, and user-centric applications designed to solve real-world
-              problems. <br/>
-              Let’s turn your ideas into powerful digital solutions.
-            </p>
+              <h2>Software Engineer & Backend Developer</h2>
+              <p>
+                  I design and build robust, scalable backend systems that power
+                  real-world products, from distributed APIs and financial platforms
+                  to secure microservices. I bring full-stack capability when the
+                  product demands it, but my core is in the engine room.
+              </p>
             
             <div className="landing-buttons">
               <motion.button 
