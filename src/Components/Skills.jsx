@@ -93,14 +93,16 @@ function Skills() {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }} >
 
-            <h3>Technical Expertise</h3>
-            <p>
-              Experienced in modern web development with a strong focus on building scalable,
-              user-centric full-stack applications. Proficient in frontend technologies such
-              as React, HTML, and CSS, complemented by backend expertise in Go, Python and Java
-              (Spring Boot). Demonstrated ability to deliver robust solutions that enhance
-              performance, maintainability, and user engagement.
-            </p>
+              <h3>Technical Expertise</h3>
+              <p>
+                  My core stack is Java (Spring Boot) and Go for backend systems, with PostgreSQL
+                  and MongoDB for data persistence. I build around clean architecture principles,
+                  clear domain boundaries, maintainable service design, and APIs that don't become
+                  someone else's problem six months later.
+                  <br/><br/>
+                  On the frontend I'm comfortable with React and modern CSS when the project calls
+                  for it, but backend engineering is where I operate at my best.
+              </p>
             <div className="expertise-categories">
               <div className="category">
                 <h4>Frontend</h4>
