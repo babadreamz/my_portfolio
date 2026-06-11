@@ -11,7 +11,6 @@ import {
     FaShieldAlt
 } from 'react-icons/fa'
 import {SiTailwindcss, SiFirebase, SiMongodb} from 'react-icons/si'
-import Portfolio from '../assets/Images/portfolio.png'
 import BulkEmails from '../assets/Images/bulk_emails.png'
 import ExpenseTracker from '../assets/Images/expense_tracker.png'
 import vote from '../assets/Images/vote.png'
@@ -79,20 +78,7 @@ function Projects() {
             category: 'backend',
             techIcons: [FaGolang, SiMongodb]
         },
-        {
-            id: 5,
-            title: 'Portfolio Website',
-            description: 'Built with React, TailwindCSS, and Framer Motion. This web application delivers a responsive,' +
-                ' visually engaging user experience. It combines modern UI design with smooth animations and scalable ' +
-                'architecture to ensure performance and interactivity across devices.',
-            image: `${Portfolio}`,
-            liveUrl: 'https://myportfolio-git-main-babadreamzs-projects.vercel.app/',
-            githubUrl: 'https://github.com/babadreamz/my_portfolio',
-            technologies: ['React', 'JavaScript', 'CSS3', 'Framer Motion'],
-            category: 'frontend',
-            techIcons: [FaReact, FaJs, SiTailwindcss]
-        },
-        {
+                {
             id: 6,
             title: 'Expense Tracker App',
             description: 'A robust expense tracking backend service built with Spring Boot and PostgreSQL. ' +
@@ -122,7 +108,6 @@ function Projects() {
     const categories = [
         { id: 'all', name: 'All Projects' },
         { id: 'fullstack', name: 'Full Stack' },
-        { id: 'frontend', name: 'Frontend' },
         { id: 'backend', name: 'Backend' }
     ]
 

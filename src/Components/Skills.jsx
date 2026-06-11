@@ -1,8 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import {
-  FaHtml5,
-  FaCss3Alt,
   FaJs,
   FaPython,
   FaReact,
@@ -11,31 +9,29 @@ import {
   FaJava,
   FaNodeJs,
   FaDocker,
-    FaCloud,
-    FaCodeBranch
+  FaCloud,
+  FaCodeBranch
 } from 'react-icons/fa'
-import {SiMongodb, SiPostgresql, SiTailwindcss} from 'react-icons/si'
+import {SiMongodb, SiPostgresql, SiSpring} from 'react-icons/si'
 import {FaGolang} from "react-icons/fa6";
 
 function Skills() {
 
   const skills = [
-      { name: 'Java', icon: FaJava, level: 95, color: '#F80000' },
-      { name: 'PostgreSQL', icon: SiPostgresql, level: 90, color: '#14629b'},
-      { name: 'MySQL', icon: FaDatabase, level: 85, color: '#4479A1'},
-      { name: 'Go', icon: FaGolang, level: 80, color: '#1572B6' },
-      { name: 'Git', icon: FaGitAlt, level: 90, color: '#F05032' },
-      { name: 'Docker', icon: FaDocker, level: 80, color: '#5b5bb4' },
-      { name: 'Python', icon: FaPython, level: 70, color: '#45456d' },
-      { name: 'Cloud', icon: FaCloud, level: 80, color: '#1572B6' },
-      { name: 'CI/CD Pipeline', icon: FaCodeBranch, level: 80, color: '#1b0f62' },
-      { name: 'MongoDB', icon: SiMongodb, level: 75, color: '#47A248' },
-      { name: 'Node.js', icon: FaNodeJs, level: 75, color: '#3776AB' },
-      { name: 'React', icon: FaReact, level: 75, color: '#272769' },
-      { name: 'JavaScript', icon: FaJs, level: 80, color: '#F7DF1E' },
-      { name: 'HTML5', icon: FaHtml5, level: 60, color: '#E34F26' },
-      { name: 'Tailwindcss', icon: SiTailwindcss, level: 60, color: '#1b0f62'},
-      { name: 'CSS3', icon: FaCss3Alt, level: 60, color: '#1572B6' },
+      { name: 'Java', icon: FaJava, color: '#F80000' },
+      { name: 'Spring Boot', icon: SiSpring, color: '#6DB33F' },
+      { name: 'PostgreSQL', icon: SiPostgresql, color: '#14629b'},
+      { name: 'Go', icon: FaGolang, color: '#1572B6' },
+      { name: 'MySQL', icon: FaDatabase, color: '#4479A1'},
+      { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+      { name: 'Docker', icon: FaDocker, color: '#5b5bb4' },
+      { name: 'CI/CD Pipeline', icon: FaCodeBranch, color: '#1b0f62' },
+      { name: 'Git', icon: FaGitAlt, color: '#F05032' },
+      { name: 'Cloud', icon: FaCloud, color: '#1572B6' },
+      { name: 'Python', icon: FaPython, color: '#45456d' },
+      { name: 'Node.js', icon: FaNodeJs, color: '#3776AB' },
+      { name: 'React', icon: FaReact, color: '#272769' },
+      { name: 'JavaScript', icon: FaJs, color: '#F7DF1E' },
   ]
 
   return (
@@ -69,19 +65,6 @@ function Skills() {
                     <Icon />
                   </div>
                   <h4>{skill.name}</h4>
-                  <div className="skill-progress">
-                    <div className="progress-bar">
-                      <motion.div 
-                        className="progress-fill"
-                        style={{ backgroundColor: skill.color }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1.5, delay: 0.5 + index * 0.1 }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                    <span className="progress-text">{skill.level}%</span>
-                  </div>
                 </motion.div>
               )
             })}
@@ -105,20 +88,20 @@ function Skills() {
               </p>
             <div className="expertise-categories">
               <div className="category">
-                <h4>Frontend</h4>
-                <p>React, HTML5, CSS3, JavaScript, Tailwind CSS</p>
-              </div>
-              <div className="category">
                 <h4>Backend</h4>
-                <p>Java, Python,Go, NodeJs</p>
+                <p>Java (Spring Boot), Go, Python, Node.js</p>
               </div>
               <div className="category">
                 <h4>Database</h4>
-                <p>MongoDB, PostgreSQL, MySQL</p>
+                <p>PostgreSQL, MySQL, MongoDB</p>
+              </div>
+              <div className="category">
+                <h4>Frontend</h4>
+                <p>React, JavaScript, Tailwind CSS</p>
               </div>
               <div className="category">
                 <h4>Tools</h4>
-                <p>Git, Postman, Docker, GitAction, </p>
+                <p>Git, Postman, Docker, GitHub Actions</p>
               </div>
             </div>
           </motion.div>

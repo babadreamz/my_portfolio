@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { FaDownload, FaWhatsapp } from 'react-icons/fa'
 
 
 function Landing() {
-  const [showInput, setShowInput] = useState(false);
-    const [profileImg, setProfileImg] = useState(import.meta.env.VITE_PROFILE_PIC);
+    const profileImg = import.meta.env.VITE_PROFILE_PIC;
 
   const my_cv = import.meta.env.VITE_CV
 
@@ -31,39 +30,8 @@ function Landing() {
     window.open(whatsappUrl, '_blank')
   }
 
-  const toggleInputVisibility = () => {
-    setShowInput(prev => !prev);
-  };
 
-  const preset = import.meta.env.VITE_PRESET
-  const cloudName = import.meta.env.VITE_CLOUD_NAME
-  const uploadURL = import.meta.env.VITE_IMAGE_UPLOAD_URL
 
-  const handleUploadFile = async (event) => {
-    event.preventDefault();
-    const file = event.target.file.files[0];
-      if (!file) return;
-
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', preset);
-    formData.append('cloud_name', cloudName);
-
-    try{
-        const response = await fetch(uploadURL, {
-            method: 'POST',
-            body: formData
-        });
-        const data = await response.json();
-
-        if (data.secure_url) {
-            setProfileImg(data.secure_url); // Update the UI immediately
-            setShowInput(false); // Hide the upload form
-        }
-    } catch (err) {
-        alert("Upload failed: " + err.message);
-    }
-  };
   return (
     <section id="home" className="landing">
       <div className="landing-container">
@@ -76,7 +44,7 @@ function Landing() {
           >
             <h3>Hello, I'm</h3>
             <h1>Shima Hilary Kaior</h1>
-              <h2>Software Engineer & Backend Developer</h2>
+              <h2>Backend Engineer</h2>
               <p>
                   I design and build robust, scalable backend systems that power
                   real-world products, from distributed APIs and financial platforms
@@ -121,78 +89,6 @@ function Landing() {
             <img src={profileImg} alt="Profile" />
           </motion.div>
         </div>
-         <div style={{ position: 'relative' }}>
-      <span
-        onClick={toggleInputVisibility}
-        style={{
-          width: '20px',
-          height: '20px',
-          backgroundColor: 'transparent',
-          position: 'absolute',
-          borderRadius: '3px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          bottom: '-60px',
-          right: '-110px',
-        }}
-      >
-        +
-      </span>
-
-      {showInput && (
-        <form onSubmit={ handleUploadFile }
-              style={{
-                width: '10%',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems:'center',
-                position: 'relative',
-                gap: '5px'
-
-              }}>
-          <input
-              style={{
-                fontSize: '14px',
-                borderRadius: '30px',
-                padding: '3px',
-                display: 'flex',
-              }}
-            className='upload-btn'
-            type='file'
-            name='file'
-            id='file'
-            accept='.jpg, .png'
-          />
-          <button className='upload-btn'
-                  type='submit'
-          style={{
-            width: '60px',
-          }}
-          >
-            Upload
-          </button>
-
-          <span
-        onClick={toggleInputVisibility}
-        style={{
-          width: '20px',
-          height: '20px',
-          backgroundColor: 'transparent',
-          position: 'absolute',
-          borderRadius: '3px',
-          display: 'flex',
-          alignItems: 'start',
-          justifyContent: 'center',
-          bottom: '0',
-          left: '0',
-        }}
-      >
-        -
-      </span>
-        </form>
-      )}
-    </div>
       </div>
 
     </section>

@@ -95,7 +95,7 @@ function Contact() {
     {
       icon: FaTwitter,
       name: 'Twitter / X',
-      url: 'https://x.com/shimakaior',
+      url: 'https://x.com/hilarykaior',
       color: '#1DA1F2'
     }
   ]

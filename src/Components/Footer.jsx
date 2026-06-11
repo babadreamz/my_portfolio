@@ -19,10 +19,10 @@ function Footer() {
             viewport={{ once: true }}
           >
             <p>
-              &copy;Shima H. Kaior, 2025.
+              &copy;Shima Hilary Kaior, 2026.
             </p>
             <p className="footer-subtitle">
-              Software Engineer | Full-Stack Developer | Problem Solver
+              Backend Engineer | Java, Spring Boot, PostgreSQL
             </p>
           </motion.div>
           

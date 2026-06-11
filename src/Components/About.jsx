@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import {FaCode, FaLaptopCode, FaMobile, FaDatabase, FaInfinity} from 'react-icons/fa'
+import {FaLaptopCode, FaDatabase, FaInfinity} from 'react-icons/fa'
 
 function About() {
   return (
@@ -38,13 +38,13 @@ function About() {
             
             <div className="about-stats">
               <div className="stat">
-                <h4>3+</h4>
-                <p>Years Experience</p>
+                <h4>2</h4>
+                <p>Systems Live in Production</p>
               </div>
 
               <div className="stat">
-                <h4>24/7</h4>
-                <p>Support</p>
+                <h4>700+</h4>
+                <p>Users Served</p>
               </div>
             </div>
           </motion.div>
@@ -64,26 +64,16 @@ function About() {
                 <h4>Backend Development</h4>
                 <p>Building robust server-side applications and APIs</p>
               </div>
-                <div className="skill-item">
-                    <FaCode className="skill-icon" />
-                    <h4>Frontend Development</h4>
-                    <p>Creating responsive and interactive user interfaces</p>
-                </div>
-                <div className="skill-item">
-                    <FaInfinity className="skill-icon" />
-                    <h4>DevOps & Infrastructure</h4>
-                    <p>Managing CI/CD pipelines, cloud hosting, and automation</p>
-                </div>
               <div className="skill-item">
                 <FaDatabase className="skill-icon" />
                 <h4>Database Design</h4>
                 <p>Designing efficient database structures and queries</p>
               </div>
-              <div className="skill-item">
-                <FaMobile className="skill-icon" />
-                <h4>Mobile Development</h4>
-                <p>Creating mobile-friendly applications and PWAs</p>
-              </div>
+                <div className="skill-item">
+                    <FaInfinity className="skill-icon" />
+                    <h4>DevOps & Infrastructure</h4>
+                    <p>Managing CI/CD pipelines, cloud hosting, and automation</p>
+                </div>
             </div>
           </motion.div>
         </div>
